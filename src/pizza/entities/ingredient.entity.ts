@@ -3,10 +3,13 @@ import {
   Column,
   CreateDateColumn,
   ManyToOne,
+  Entity,
+  BaseEntity,
 } from 'typeorm';
 import { Pizza } from './pizza.entity';
 
-export class Ingredient {
+@Entity('ingredients')
+export class Ingredient extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 

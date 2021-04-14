@@ -41,6 +41,11 @@ $ npm install
 ## Running the app
 
 ```bash
+# local MySQL
+$ docker run --name pizzeria-mysql -e MYSQL_ROOT_PASSWORD=mysql_password -e MYSQL_DATABASE=pizzeria -e MYSQL_USER=pizzeria -e MYSQL_PASSWORD=mysql_password -p 3306:3306 mysql:latest
+```
+
+```bash
 # development
 $ npm run start
 

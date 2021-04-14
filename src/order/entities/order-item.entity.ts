@@ -1,13 +1,20 @@
-import { PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import {
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  Entity,
+  BaseEntity,
+} from 'typeorm';
 import { Pizza } from '../../pizza/entities/pizza.entity';
 import { Order } from './order.entity';
 
-export class OrderItem {
+@Entity('order_items')
+export class OrderItem extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ type: 'smallint' })
-  amount: number;
+  quantity: number;
 
   /*
    * Relations

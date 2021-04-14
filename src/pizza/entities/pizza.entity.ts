@@ -4,11 +4,14 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToMany,
+  Entity,
+  BaseEntity,
 } from 'typeorm';
 import { Ingredient } from './ingredient.entity';
 import { OrderItem } from '../../order/entities/order-item.entity';
 
-export class Pizza {
+@Entity('pizzas')
+export class Pizza extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
